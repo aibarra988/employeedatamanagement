@@ -1,0 +1,11 @@
+How do i add a new entry to a list in firebase?
+    database.ref().push(child);
+
+How do i get each entry in firebase list?
+    database.ref().on("child_added", function(snap) {
+        var sv = snap.val();
+    });
+
+When does the child_added event happen?
+    When a push to the database happens
+

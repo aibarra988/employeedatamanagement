@@ -13,7 +13,9 @@ var database = firebase.database();
 
 database.ref().on("child_added", function(snapshot) {
     var sv = snapshot.val();
-    console.log("child added", sv);
+    
+    var timeEmployed = moment().diff(sv.startDate, "months");
+    console.log("child added", timeEmployed);    
 
     /**
      * <tr>
@@ -29,6 +31,7 @@ database.ref().on("child_added", function(snapshot) {
     var nameEl = $("<td>").text(sv.name);
     var roleEl = $("<td>").text(sv.role);
     var startDateEl = $("<td>").text(sv.startDate);
+    var timeEmployedEl = $("<td>").text(timeEmployed + " months");
     var monthlyRateEl = $("<td>").text(sv.monthlyRate);
 
     // Add table entries here
@@ -36,6 +39,7 @@ database.ref().on("child_added", function(snapshot) {
         .append(nameEl)
         .append(roleEl)
         .append(startDateEl)
+        .append(timeEmployedEl)
         .append(monthlyRateEl);
 
     $("#table-body").append(trEl);
@@ -56,4 +60,9 @@ $("#submit").click(function() {
         startDate: formStartDate,
         monthlyRate: formMonthlyRate
     });
+
+    $("#form-name").val("");
+    $("#form-role").val("");
+    $("#form-start-date").val("");
+    $("#form-monthly-rate").val("");
 });
