@@ -1,0 +1,8 @@
+body {
+    padding: 5%;
+}
+
+#add-employee-form {
+    display: flex;
+    flex-direction: column;
+}

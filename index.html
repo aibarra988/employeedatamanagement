@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!-- bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- my steez -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <title>Employee Data Management</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div id="title" class="row">
+            <div class="col-md">
+                <h1>Employee Data Management</h1>
+                <p>A Comprehensive Directory of Employee Billable Hours</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md">
+                <h2>Add Employee</h2>
+                <form id="add-employee-form">
+                    <label for="form-name">Employee Name</label>
+                    <input id="form-name" type="text">
+                    
+                    <label for="form-role">Role</label>
+                    <input id="form-role" type="text">
+                    
+                    <label for="form-start-date">Start Date (MM/DD/YYYY)</label>
+                    <input id="form-start-date" type="text">
+                    
+                    <label for="form-monthly-rate">Monthly Rate</label>
+                    <input id="form-monthly-rate" type="text">
+                </form>
+                <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col">
+                <h2>Current Employees</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
