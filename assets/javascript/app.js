@@ -13,15 +13,40 @@ var database = firebase.database();
 
 database.ref().on("child_added", function(snapshot) {
     var sv = snapshot.val();
-    console.log(sv);
+    console.log("child added", sv);
+
+    /**
+     * <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr> 
+    */
+    
+    var trEl = $("<tr>");
+
+    var nameEl = $("<td>").text(sv.name);
+    var roleEl = $("<td>").text(sv.role);
+    var startDateEl = $("<td>").text(sv.startDate);
+    var monthlyRateEl = $("<td>").text(sv.monthlyRate);
+
+    // Add table entries here
+    trEl
+        .append(nameEl)
+        .append(roleEl)
+        .append(startDateEl)
+        .append(monthlyRateEl);
+
+    $("#table-body").append(trEl);
 });
 
 
 $("#submit").click(function() {
-    var formName = $("#form-name").val();
-    var formRole = $("#form-role").val();
-    var formStartDate = $("#form-start-date").val();
-    var formMonthlyRate = $("#form-monthly-rate").val();
+    var formName = $("#form-name").val().trim();
+    var formRole = $("#form-role").val().trim();
+    var formStartDate = $("#form-start-date").val().trim();
+    var formMonthlyRate = $("#form-monthly-rate").val().trim();
 
     console.log(formName, formRole, formStartDate, formMonthlyRate);
 
